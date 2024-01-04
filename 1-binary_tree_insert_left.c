@@ -19,14 +19,13 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 		perror("Failed to allocate memory for new node");
 		return (NULL);
 	}
-	struct binary_tree_s  *temp;
 
 	new_node->parent = parent;
 	new_node->n = value;
 	new_node->left = NULL;
 	new_node->right = NULL;
 
-	if (parent->left)
+	if (parent->left != NULL)
 	{
 		new_node->left = parent->left;
 		new_node->left->parent = new_node;
